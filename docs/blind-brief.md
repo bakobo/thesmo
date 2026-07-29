@@ -41,6 +41,35 @@ went into the implementer's head*, not of who signs the commits.
 - Any conformance vectors authored by the specification's author, until the cross-run at M5.
 - Any summary, chat log, or briefing that characterizes Custos's defects — including a
   friendly one-line hint from a maintainer.
+- **This repository's own issues and pull requests**, and its `main` branch. Both discuss the
+  specification's defects in exactly the terms you are supposed to derive independently.
+- **Any branch, ref, worktree, or directory other than the workspace you were given.** Do not
+  run `git branch -a`, `git log` on another ref, `git show` on another branch, or list the
+  parent directory of your workspace. Your workspace root is named in your brief; everything
+  outside it, except the specification directory, is out of bounds.
+
+### Branch blindness
+
+This repository maintains **more than one independent implementation of the same specification
+surface**, on long-lived branches, and their disagreement is the project's primary product. That
+only works if each implementation is a genuinely independent reading.
+
+So the reading restriction is not only about Custos commentary — it is about **this codebase**.
+You are working on one implementation. You are not told what any other contains, and you must
+not go looking: not its code, not its tests, not its readings register, not its commits, not a
+pull request describing it. If you learn how another implementation resolved a clause, your
+resolution of that clause stops being evidence.
+
+This is why `main` is off-limits to you even though it is this repo's default branch: `main`
+carries the reconciliation record, which compares implementations side by side. **Never merge or
+rebase from `main` into your branch, and never cherry-pick from it.** If your branch needs a
+shared tooling or CI change, say so in your report and the maintainer — who is not blind — will
+bring it across deliberately.
+
+You will notice this rule implies other work exists. That much is unavoidable: a rule cannot
+forbid reading something without alluding to it. What matters is that you learn nothing about
+*how* anyone else read the specification, which is the only thing that would contaminate your
+reading.
 
 If you have already read one of these, **say so** rather than proceeding. You are not
 disqualified from the project; you are disqualified from `core/`. There is real work in the
