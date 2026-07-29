@@ -143,6 +143,27 @@ Pin every underdetermination in public = decision:
         conformance is the thing being tested, so the artifact under test must itself be
         conformant. The switchboard is a test fixture that constructs pinned variants, never a
         runtime option on the shipped fold.
+    Permission to leave the differential harness outside coverage = deviation:
+      id: 5dugqt
+      # deviates-from: the 100%-branch-coverage-of-new-code standard, which is external to this
+      # repo — ../dev/methodology.md §6 — and so has no opaque node id here to point at.
+      scope: >
+        Exactly one file: tools/differential_pending.py. It is excluded from the coverage source
+        and carries no tests. The exemption does not extend to anything under src/thesmo/, to any
+        future harness that lands inside the package, or to a successor of this file once @beue6f
+        is resolved and an engine lives on main.
+      why: >
+        The script runs whichever engine is on sys.path and main carries no fold, so on main it
+        cannot execute at all and there is nothing for a test to assert against. Writing a stub
+        engine to make it testable would test the stub, not the divergence — and the divergence is
+        the entire point, since this script produced the executed cross-implementation split filed
+        as Custos #27. Chose "commit it as the reproduction recipe, uncovered and labelled" over
+        two alternatives: deleting it, which would leave #27's central evidence unreproducible by
+        anyone reading this repo; and moving it into the package with a fabricated fixture, which
+        would buy a green coverage number by testing something nobody cares about. Tradeoff
+        accepted: one committed file on main that CI never exercises, which is a real gap and is
+        why this node exists rather than a silent exclusion.
+      approved-by: Daniel Hardman, 2026-07-29
     The intent tree IS the findings register = decision:
       id: 7z2ifi
       why: >
