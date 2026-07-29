@@ -30,6 +30,14 @@ import sys
 
 #: Where the evaluator lives in each edition. 4.0 numbers it §6, 4.1 §7; the
 #: spine inversion between editions moved the section without renaming it.
+#:
+#: ~76ct — this compares exactly ONE section pair, which is narrower than what
+#: 4.1 §1.4 actually binds. Of the five walls §1.4 imports by referent, four sit
+#: in 4.0 §6 but "acts consumed as grounds require committed receipts" sits at
+#: 4.0 L1641, inside §14. So a clean result here does not mean the whole bound
+#: corpus agrees. Filed against the specification as Custos issue #21, because
+#: the referent's extent is not computable from the text; widening this tool
+#: depends on how that is ruled.
 EVALUATOR_SECTION = {"4.0": 6, "4.1": 7}
 
 _HEADING = re.compile(r"^## (\d+)\.?\s", re.MULTILINE)
