@@ -2,8 +2,8 @@
 #
 # Source of truth for thesmo's design intentions and the decisions that follow from them,
 # per the Bakobo intent-first methodology (../dev/methodology.md). Code and docs/ are DERIVED
-# artifacts. The whole tree is at design stage; nothing is implemented yet (stage-status: planned
-# marks the nodes that describe code-to-be).
+# artifacts. M1 (the §7 evaluator walls in src/thesmo/core/) is implemented; stage-status: planned
+# still marks the nodes that describe code-to-be.
 #
 # Node ids are opaque base32 [a-z2-7], stable across renames. NEVER parse them, never make
 # them semantic.
@@ -122,20 +122,21 @@ Pin every underdetermination in public = decision:
         exactly the finding text we owe the specification's author. Tradeoff: the register is
         only as discoverable as this file, so M4 must project it into custos's CONTRIBUTING.md
         finding genre rather than pointing the author at a YAML tree.
-    M1's twenty readings of the finding codomain = decision:
+    M1's twenty-two readings of the finding codomain = decision:
       id: 7h7nazgl
       stage-status: planned
       why: >
         Custos §7 — the codomain, the transition system, the evidence ordering, the two currents
         — is the whole of what M1 core/ implements, and reading it closely produced twenty places
-        where a conforming engine has a genuine choice. Each is banked below as its own node with
+        where a conforming engine has a genuine choice — twenty on the first close read, two
+        more as the module surfaces were typed. Each is banked below as its own node with
         the rejected reading named; the long form, with quoted spans and the inputs that
         discriminate the readings, is docs/readings-alpha.md, which this node's children index.
         Chose one node per reading over a single node summarizing them, because a summary cannot
         be rebutted reading-by-reading and because @7z2ifi makes each node the finding text we
         owe the specification's author. Tradeoff accepted: twenty nodes is a lot of tree for one
-        milestone, and the ones marked convergent may turn out to be noise. Fourteen of the
-        twenty are DIVERGENT — two conforming engines produce different findings on committed
+        milestone, and the ones marked convergent may turn out to be noise. Sixteen of the
+        twenty-two are DIVERGENT — two conforming engines produce different findings on committed
         bytes — which is the thing @l7al6o exists to demonstrate.
       children:
         Affirmed carries its bundle and clause set, though §7.3 omits it = decision:
