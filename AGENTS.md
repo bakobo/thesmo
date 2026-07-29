@@ -1,35 +1,40 @@
-## Starting a repo from this template
+## STOP — this repo has a reading restriction
 
-*This section documents bootstrapping a **new** repo from `bakobo/template`. Once your repo is set
-up, delete this section — like the Testing/CI/README stanzas below, it is self-removing.* Two ways
-to start; both end at the same per-clone setup.
+thesmo is built to find where the Custos specification underdetermines a conforming engine.
+That signal is destroyed by *reading about* the specification instead of reading it.
 
-**A. Canonical — GitHub template (preferred).** Create the repo straight from the template so the
-scaffolding arrives automatically:
+**Before touching `src/thesmo/core/`, read [`docs/blind-brief.md`](docs/blind-brief.md).** The
+short version, binding under [`this.i` @qmz2o4](this.i) (a locked constraint):
 
-```sh
-gh repo create bakobo/<name> --template bakobo/template --private
-```
+- **Read** `spec/custos-4.1.md` **and** `spec/custos-4.0-kernel-draft.md` in the Custos
+  repository. The 4.0 kernel is required, not optional — 4.1 §1.4 binds its evaluator sections
+  in by digest referent.
+- **Do not read** the Custos issue tracker, `reviews/`, `tools/`, or any review, summary, or
+  briefing about Custos's defects — including a one-line hint from a maintainer.
+- **Never resolve an ambiguity by asking.** Bank it as a `this.i` node whose `why` names the
+  reading you rejected and cites the lines permitting each, then pin one reading. An ambiguity
+  resolved silently is the one failure this project cannot recover from.
+- If you have already read a forbidden source, say so. You are not off the project — you are
+  off `core/`. The harness, vectors, substrate adapter, and tooling carry no such restriction.
 
-**B. Vendor into an existing / hand-made repo.** When the target repo already exists (you ran
-`git init` yourself, or you are retrofitting an older repo), copy **only** the template's tracked
-scaffolding into it — `AGENTS.md CLAUDE.md GEMINI.md .cursorrules .gitignore this.i.seed .github/`.
-Do **not** copy `.git/` or `.tick/` (the tick ledger is per-clone; see below).
+## Commands
 
-**Per-clone setup (run in every fresh clone, both paths):**
+| Task | Command |
+|---|---|
+| Install / sync | `uv sync` |
+| Test (gates at 100% branch coverage) | `uv run pytest` |
+| Compare Custos editions | `uv run python -m thesmo.editions --custos <path>` |
 
-1. **`tick init`** — connect the clone to the task ledger (adopts the remote ledger if a colleague
-   already made one, else creates it). Not tracked on `main`; it is an orphan `tick` branch plus a
-   gitignored `.tick/` store. Once the repo has a remote, `git config tick.remote origin` and push
-   the `tick` branch so the ledger is backed up.
-2. **Intent (`this.i`).** If anyone will later need to know *why* this repo is built the way it is,
-   adopt intent: `cp this.i.seed this.i`, rewrite the root goal to this repo's real purpose (the
-   rebuttal-surface standard), give it a fresh opaque id, and delete `this.i.seed`. A pure
-   content/asset/config repo may instead just delete `this.i.seed` — its absence is the opt-out.
-3. **Docs, README, CI.** Follow the repo-layout convention — design/architecture docs under `docs/`
-   (the **Repo layout** rule in the engineering-standards block below;
-   [`dev/standards/repo-layout.md`](../dev/standards/repo-layout.md)). Add a `README.md` (fresh-clone
-   → passing tests, with a clickable CI badge) and CI once the repo gains code, per the stanzas below.
+Python 3.14+, uv, pytest. `core/` has **no runtime dependencies** and must import no KERI
+library; `tests/test_core_purity.py` enforces that by AST inspection, so a lazy import inside a
+function body will not sneak past it. keripy arrives at M3, in `thesmo.substrate` only.
+
+## Testing
+
+Strict TDD. Write failing tests that capture the happy path and the edge/unhappy cases for each
+requirement, observe them fail, then implement until they pass. Never check in without proving
+the suite green. 100% branch coverage of new code is enforced in CI; any gap needs an approved
+`deviation:` node in `this.i`. Always leave existing code better tested than you found it.
 
 ## Bakobo engineering standards
 
@@ -72,38 +77,6 @@ making design decisions here.
 If this repo has no `this.i` yet and warrants one, see [`dev/methodology.md`](../dev/methodology.md)
 §2 and the shipped `this.i.seed`. A trivial repo (pure content/assets/config, where no one will
 later need to know *why*) may skip intent entirely — just delete `this.i.seed`.
-
-## Testing Protocol
-
-This repository appears to have no test suite yet. Before writing feature code
-or fixing bugs, propose an appropriate testing framework for this project type
-and add a single trivially-passing test to confirm the setup works. In the
-same commit, propose to change AGENTS.md to replace this instruction with one
-that instructs agents to follow strict TDD from now on: write failing tests
-that capture happy path and edge cases/unhappy paths for each requirement,
-observe them fail, implement until tests pass, never checkin without proving
-that all tests pass, aim for 100% of all new code, and always leave existing
-code better tested than it was before you touched it.
-
-## CI and Documentation
-
-This repo appears to have no CI workflows yet. Until it does, any time you make
-code changes to the user, propose an appropriate set of GitHub actions (e.g.,
-`.github/workflows/ci.yml`) that builds and runs tests on every push and
-pull request. Propose to remove this instruction from AGENTS.md on the
-same commit.
-
-This repository has no README. As long is this is the case, any time you
-make code changes for the user, propose to add a `README.md` that explains how
-to get from a fresh clone to passing tests, with a clickable CI status
-badge at the top for each active workflow. Propose to remove this
-instruction from AGENTS.md on the same commit.
-
-When writing or modifying GitHub Actions workflows, always use the latest
-stable release of each action. Avoid versions pinned to Node.js 16 or
-Node.js 20 (both deprecated by GitHub). In 2026, this meant to prefer Node.js
-24-compatible versions, but the standard may evolve over time. Check the GitHub
-Marketplace for each action's current release.
 
 <!-- >>> tick stanza >>> (managed by `tick init`) -->
 
