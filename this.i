@@ -41,6 +41,37 @@ Falsify the Custos specification by building a conforming Gever = goal:
         value on differential testing. Everything downstream of this node — above all the reading
         register at @qflz2q — exists because the obvious instrument is unavailable. If the Custos
         author turns out to hold private engine code, this node is wrong and the plan changes.
+      children:
+        M1 falsified this node's premise; we have two engines = decision:
+          id: yghv6a
+          why: >
+            M1 ran two implementers blind against the same spec surface, intending only to compare
+            their READINGS. It produced two complete, independently-written, 100%-covered engines,
+            and the first executed cross-implementation divergence (Custos #27: one emits a
+            one-element requirement set, the other two, from identical committed input). So the
+            differential instrument is available after all. The premise above was wrong about
+            cost, not about logic: the expensive part was never the second engine, it was the
+            second READING — and blind briefing produces a reading, with an engine attached
+            almost for free. Kept the parent node's `why` unedited as the historical record rather
+            than rewriting it, because a premise that turned out false is evidence about how we
+            estimate and should stay legible. Consequence: both branches are retained and neither
+            is deleted. Rejected "merge the better engine and drop the other" — the disagreement
+            between them is the product, and deleting either destroys the instrument that produced
+            the strongest finding of M1.
+        How to carry two engines in one repository = tension:
+          id: beue6f
+          why: >
+            @yghv6a commits us to keeping both engines, but they cannot both live on main as
+            written: each imports `thesmo.core`, so merging them side by side needs a rename, and
+            `tests/test_core_purity.py` globs a single `core/` path. Meanwhile leaving them on
+            long-lived branches means main carries no fold at all, and the differential harness
+            has to reach across worktree paths that are not committed anywhere. Neither shape is
+            obviously right and the choice constrains M2's layout, the purity gate, and how
+            vectors are addressed.
+          # Open — no resolution. Candidates: (a) thesmo.engines.alpha/.beta behind one interface;
+          # (b) keep both as branches and run the harness across worktrees; (c) promote one to
+          # core/ and keep the other as a conformance oracle. Deferred to the M2 interview so it
+          # is decided deliberately rather than by whichever merge happens first.
     Keep the dogfooding door open, do not walk through it = decision:
       id: ylvmei
       stage-status: planned
