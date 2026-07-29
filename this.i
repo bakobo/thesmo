@@ -158,10 +158,10 @@ Implement the walls; refuse above them = decision:
 Shipping the only engine may capture an open specification = tension:
   id: tswf4m
   why: >
-    Custos §15 leaves the carriage encoding of its object classes an undesigned deliverable, and
-    the panel finding SPC-F3 shows the consequence: "byte-identical" is the headline conformance
-    predicate at §2 and §7.3, but §16's actual discharge test relaxes to semantic equality, so no
-    conformance-suite author can write a decidable pass/fail for the headline obligation today.
+    Custos §15 leaves the carriage encoding of its object classes an undesigned deliverable, with
+    a consequence readable from the committed bytes alone: "byte-identical" is the headline
+    conformance predicate at §2 and §7.3, but §16's actual discharge test relaxes to semantic
+    equality, so no conformance-suite author can write a decidable pass/fail for it today.
     An engine must serialize SOMETHING. Whatever thesmo picks becomes the only running answer,
     and gravity does the rest — which contradicts @l7al6o, since capturing an open question is
     the opposite of exposing it.
