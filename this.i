@@ -247,7 +247,12 @@ Pin every underdetermination in public = decision:
             ordered clause list, so under that reading the fold consumes an order it cannot
             derive from its own inputs (axiom 2, axiom 4). Sorting by identifier bytes is
             derivable from what the fold holds. Both readings are lawful and they render the same
-            element differently, so this is a byte-level fork.
+            element differently, so this is a byte-level fork. Same clause, second fork:
+            flattening a LIST to bytes needs a separator or it is not injective (["a","bc"] and
+            ["ab","c"] both flatten to abc, leaving the canonical order non-total and the
+            finding's bytes undetermined); we pin a NUL join, below every character a
+            self-addressing identifier can carry. A separator ABOVE the identifier alphabet
+            reorders elements whose clause lists prefix one another. The standard states none.
         Defeater classes compare by their stated rank, not by their names = decision:
           id: zmwnx35s
           why: >
@@ -351,6 +356,30 @@ Pin every underdetermination in public = decision:
             exactly there. So where the domain's law commits no bearing predicate at T2/T3, the
             fold refuses. The rejected reading returns self-convicted where ours returns a
             refusal, and §13.1 recourse hangs off which.
+        An annihilated dependent inherits the lower defeat's class and citation = decision:
+          id: 2lc26h
+          why: >
+            §7.4's defeat current voids dependents but says nothing about the payload of the
+            resulting finding, while §7.3 requires every defeated finding to carry a class and a
+            citation. Rejected citing the lower-tier FINDING: no section mints an identifier for
+            a finding — §13.1 pins evidence by digest and states the finding by its citation — so
+            that reading needs a construct the standard does not supply. Dependents "were never
+            valid" for the same reason their ground was never valid, so they inherit it. Two
+            cases §7.4 does not reach at all, pinned here: an already-defeated dependent puts the
+            annihilating defeat into the available set and re-runs canonical selection (leaving
+            the old citation would make the finding depend on the order cascades were applied in,
+            an ambient order axiom 4 forbids), and a self-convicted dependent is untouched,
+            because self-conviction is terminal for its question.
+        Taint marks any dependent's standing, not only an affirmed one = decision:
+          id: 6h4dxyr7
+          why: >
+            §7.4 names only the affirmed case when it says what converts to contested standing.
+            Rejected bounding the current there: the same bullet says the subject's voice is
+            poisoned going forward, and withholding the marker from a defeated dependent would
+            leave a defeated-then-duplicitous subject looking cleaner going forward than an
+            affirmed one. Under @b7773r the finding is unchanged either way, so the readings
+            differ only on a non-finding marker that no ruled span types — which is why this is
+            banked as convergent rather than switched.
         Law-relative duplicity with no committed predicate is evidence, not refusal = decision:
           id: ided2r
           why: >

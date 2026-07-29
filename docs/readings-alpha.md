@@ -310,6 +310,15 @@ axiom 2's closure.
 `[C2, C1]` under A and `[C1, C2]` under B; and where two elements share subject and kind, the
 comparison of "citing-clause bytes" can order them oppositely.
 
+**And a sub-point with its own fork:** "citing-clause bytes" is the comparison key for a *list*,
+so the list must be flattened to bytes. Concatenating without a separator is not injective —
+`["a", "bc"]` and `["ab", "c"]` both flatten to `abc` and would compare equal, which would make
+the canonical order non-total and the finding's bytes undetermined. I pin **`b"\x00"`-joined
+UTF-8**, a separator below every character a self-addressing identifier can carry. Any other
+separator below the identifier alphabet yields the same order; a separator *above* it (say
+`b"~"`) reorders elements whose clause lists are prefixes of one another. The standard states
+no separator at all.
+
 ### R11 — "Lexicographic minimum" over a *rank* *convergent* (@zmwnx35s)
 
 Same span as R7. The first component of the tuple is a "defeater-class rank" and the classes
@@ -528,6 +537,52 @@ because refusal is for a missing rule, and here the rule is present and says "no
 conviction here". Logged because the T2/T3 no-predicate case and the R19 no-bearing-predicate
 case look identical from inside the fold and resolve **opposite ways**, which is a genuinely
 hard seam to get right from the text.
+
+### R21 — What citation does an annihilated dependent carry? **DIVERGENT** (@2lc26h)
+
+§7.4 lines 1153–1157 says the defeat current voids dependents but says nothing about the
+*payload* of the resulting finding — while §7.3 lines 1042–1047 rules that every defeated
+finding SHALL carry a defeater class and a citation.
+
+- **Reading A** — the dependent cites the lower-tier finding itself ("this was voided by that
+  finding"). Requires findings to have identifiers, which the standard nowhere gives them.
+- **Reading B** — the dependent inherits the lower defeat's class, citation and subcode: the
+  dependents "were never valid" for the same reason the ground was never valid, and
+  "annihilation is discovery, not change" (line 1157).
+
+**Pinned: B.** A needs an identifier for a finding, and no section mints one — §13.1 pins
+*evidence* by digest and states the finding by its citation, not by an identifier of its own.
+I reject A as requiring a construct the standard does not supply.
+
+Two adjacent cases the section does not reach at all, pinned here:
+
+- **an already-`defeated` dependent** — the annihilating defeat joins the set of simultaneously
+  available defeats and canonical selection (R7) picks the minimum. Rejected leaving the
+  existing citation in place, which would make the finding depend on the order in which
+  cascades were applied — an ambient order, forbidden by axiom 4.
+- **a `self-convicted` dependent** — unchanged. Self-conviction is "terminal for its question"
+  (line 1088) and no further evidence rehabilitates *or* re-convicts it.
+
+**Divergence:** every annihilated finding's citation differs between A and B.
+
+### R22 — Does taint reach dependents that were not affirmed? *convergent* (@6h4dxyr7)
+
+§7.4 line 1160 names only the affirmed case: "what was affirmed above / converts to contested
+standing rather than to nothing."
+
+- **Reading A** — taint is defined only over affirmed dependents; a pending or defeated
+  dependent is untouched by a lower-tier self-conviction.
+- **Reading B** — taint is a property of the *subject's standing going forward* ("The subject's
+  voice is poisoned going forward", line 1163), so it is computed for any dependent, and in
+  every case the dependent's finding is unchanged.
+
+**Pinned: B.** Under R17 the finding never changes anyway, so A and B differ only in whether a
+contested-standing marker is produced for a non-affirmed dependent — and withholding it would
+mean a defeated-then-duplicitous subject looks cleaner going forward than an affirmed one. I
+reject A because §7.4's sentence explains the affirmed case (the interesting one, where
+something might have been thought to un-happen) rather than bounding the current.
+
+*Convergent* on findings; divergent on the non-finding marker, which no ruled span types.
 
 ---
 
