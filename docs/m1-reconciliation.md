@@ -109,7 +109,12 @@ Neither register subsumes the other, which is itself an argument for having run 
 **beta only**
 
 - The Ground Axiom carries no BCP 14 keyword, so by §3's own reading rule it binds nothing
-  (entry 2). **Queued, not yet filed.**
+  (entry 2) — Custos **#29**, with a repair seeded as Custos PR **#30**.
+- "Bearing" gates every edge into `self-convicted` but is given a decision procedure only at the
+  key tier, and its silence is indistinguishable from §7.4's law-relative consumption (entry 21;
+  alpha reached the same bind at R19/R20) — Custos **#32**. This is the case where the
+  unspecified law-expression layer reaches *inside* the walls §1.4 declares binding, rather than
+  staying above them; see [`this.i` @zizfi4](../this.i).
 - §1.4 imports "the canonical ordering and selection of **evidence**", but 4.0 has an ordering of
   *bundles* and a selection of *defeats*; the only evidence ordering is 4.1 §17, which has no 4.0
   counterpart and so cannot be imported — posted to Custos **#21**.
@@ -154,6 +159,10 @@ than settled by default.
 | [#24](https://github.com/Nicholas-Keystate/custos/issues/24) | BLOCKING | contested standing outside the codomain |
 | [#25](https://github.com/Nicholas-Keystate/custos/issues/25) | MAJOR | first-seen survival vs axiom 4 and §17 |
 | [#20](https://github.com/Nicholas-Keystate/custos/issues/20), [#21](https://github.com/Nicholas-Keystate/custos/issues/21) | MAJOR | filed pre-M1; #21 sharpened by beta's G4 |
+| [#29](https://github.com/Nicholas-Keystate/custos/issues/29) | BLOCKING | Ground Axiom unruled; `affirmed` has no ruled payload. Repair seeded as PR [#30](https://github.com/Nicholas-Keystate/custos/pull/30) |
+| [#32](https://github.com/Nicholas-Keystate/custos/issues/32) | BLOCKING | "bearing" undefined above the key tier; refusal boundary indistinguishable |
 | [#2](https://github.com/Nicholas-Keystate/custos/issues/2), [#6](https://github.com/Nicholas-Keystate/custos/issues/6) | — | blind corroboration posted |
 
-Still queued, verified but unfiled: the Ground Axiom's missing BCP 14 keyword.
+**Every M1 finding is now filed.** Three of beta's remain queued as lower-severity observations
+rather than defects: what alphabet "lexicographic" ranges over (entry 6), §8's composed-evidence
+element carrying fields §7.3's does not (entry 13), and the scope of the receipts wall (entry 24).
