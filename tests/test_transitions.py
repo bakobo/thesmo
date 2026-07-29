@@ -8,6 +8,7 @@ self-edge is therefore enumerated nowhere, which is entry 14 of
 ``docs/readings-beta.md``.
 """
 
+import inspect
 import itertools
 
 import pytest
@@ -145,6 +146,18 @@ def test_every_forbidden_edge_is_refused_with_its_reason(frm, to):
         check_transition(frm, to, PAIR)
     assert excinfo.value.code == "THESMO_FORBIDDEN_TRANSITION"
     assert FORBIDDEN[(frm, to)] in str(excinfo.value)
+
+
+def test_the_transition_system_is_tier_generic():
+    """this.i @iidbntm: the ratified rule embeds 3.3's system "at T3" and stops.
+
+    §7.1 says the four-valued scheme is instantiated at every tier but commits
+    the *ordering* per tier and says nothing about the transitions. We read the
+    system as a property of the finding type, which is tier-generic — so no
+    function here takes a tier, and a key-tier finding cannot flip either.
+    """
+    assert "tier" not in inspect.signature(check_transition).parameters
+    assert "tier" not in inspect.signature(check_refinement).parameters
 
 
 def test_permits_reports_the_enumeration_without_conditions():
