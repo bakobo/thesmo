@@ -122,6 +122,244 @@ Pin every underdetermination in public = decision:
         exactly the finding text we owe the specification's author. Tradeoff: the register is
         only as discoverable as this file, so M4 must project it into custos's CONTRIBUTING.md
         finding genre rather than pointing the author at a YAML tree.
+    M1's twenty readings of the finding codomain = decision:
+      id: 7h7nazgl
+      stage-status: planned
+      why: >
+        Custos §7 — the codomain, the transition system, the evidence ordering, the two currents
+        — is the whole of what M1 core/ implements, and reading it closely produced twenty places
+        where a conforming engine has a genuine choice. Each is banked below as its own node with
+        the rejected reading named; the long form, with quoted spans and the inputs that
+        discriminate the readings, is docs/readings-alpha.md, which this node's children index.
+        Chose one node per reading over a single node summarizing them, because a summary cannot
+        be rebutted reading-by-reading and because @7z2ifi makes each node the finding text we
+        owe the specification's author. Tradeoff accepted: twenty nodes is a lot of tree for one
+        milestone, and the ones marked convergent may turn out to be noise. Fourteen of the
+        twenty are DIVERGENT — two conforming engines produce different findings on committed
+        bytes — which is the thing @l7al6o exists to demonstrate.
+      children:
+        Affirmed carries its bundle and clause set, though §7.3 omits it = decision:
+          id: lkfaqca
+          why: >
+            §7.1 gives affirmed a ground ("the evidence bundle and the clause set under which it
+            was appraised") but §7.3's "Required payloads" enumerates only defeated, pending and
+            self-convicted — while claiming to be a complete enumeration. Rejected the reading
+            that affirmed is a nullary constructor: §1.4 axiom 1 says the codomain "admits no
+            bare verdicts", and an axiom outranks an enumeration that dropped a row. The cost of
+            being wrong is that our affirmed findings carry payload no other engine emits, so
+            byte-comparison against a §7.3-literal engine fails on every affirmation.
+        Every finding carries the triple it was computed over = decision:
+          id: krkkmwhh
+          why: >
+            §14 rules that "every finding retains its position, its defeated clause, its
+            verification grain, and its committed law head", while §7.3's payload list mentions
+            neither position nor law head. Rejected treating those as carriage supplied by a
+            wrapper: §14's span says "every finding", and a value that drops two of axiom 2's
+            three inputs cannot be checked against them by the stranger the whole design is
+            written for. Consequence carried openly: "verification grain" appears exactly once
+            in 4.1, is defined nowhere in either edition, and is therefore NOT implemented.
+        Requirement kind and pending species are two fields, not one = decision:
+          id: 2kzvek2
+          why: >
+            §7.3 has each requirement element carry "requirement kind"; §7.2 additionally rules
+            that a pending finding "SHALL carry the species of each of its requirement elements".
+            Rejected reading them as one field under two names: §7.2's species enumeration is
+            closed at four cure paths, while §6 and §8 describe element content (required schema,
+            expected issuer) that cannot be expressed in it, so a single field would have to be
+            both closed and open. This one is load-bearing for bytes: §7.3 sorts elements by
+            "subject, then kind", so the two readings sort the same set differently.
+        Refusal is a returned value, not a raised exception = decision:
+          id: iezwqh
+          why: >
+            §1.1 and §7.5 both say the refusal is "recorded as an operational fact", and §1.4
+            axiom 3 and §17 both require it to name what is missing. Rejected raising: you cannot
+            record what you threw away, and in Python an exception invites a caller to swallow
+            exactly the fact the standard obliges it to keep. Refusal is a type disjoint from
+            Finding, so the codomain stays four-valued (§15's wall) without hiding the refusal.
+            Both readings agree on WHICH invocations refuse, so this is API shape, not semantics.
+        The bundle is a set of coordinate-bearing items, ordered inside the fold = decision:
+          id: vwqohe
+          why: >
+            §7.3 orders bundles by the subset relation (so a bundle is a set) while §17 requires
+            the fold to consume its log in one committed order (KEL anchoring order, then the
+            anchoring event's seal list). Rejected pushing ordering out to the substrate adapter:
+            order would then reach the fold from outside the closed triple, which axiom 2 forbids,
+            so each evidence item carries its own committed coordinate and the fold sorts. §17
+            forbids only UNCOMMITTED tiebreaks and states none for two items at one coordinate;
+            we pin the item identifier's bytes ascending, which is lawful but not unique — a
+            different committed tiebreak changes which item is first-seen (see @r5p4h2).
+        Byte-identity is undecidable at this layer, so core/ compares structure = constraint:
+          id: holyd22k
+          why: >
+            §7.3 makes byte-identical agreement the conformance predicate for findings; §15
+            confesses the carriage encoding of this document's object classes is an undesigned
+            deliverable. No encoding exists under which the predicate can be evaluated, so core/
+            gives findings structural value equality over frozen, canonically ordered components
+            and defers bytes to the layer the standard leaves open (@tswf4m owns that choice).
+            Driving constraint: inventing an encoding here would silently answer the open
+            question rather than exhibit it. Every "differ byte for byte" claim in
+            docs/readings-alpha.md means: differ structurally, under any injective encoding.
+        The empty subcode orders LAST, against "lexicographic minimum" = decision:
+          id: kjqxel
+          why: >
+            §7.3's canonical selection says the finding cites "the lexicographic minimum of
+            (defeater-class rank, citation identifier, subcode)" and then says that where the
+            clause defines no subcode "the subcode is empty and orders last". Under any
+            lexicographic order the empty string is the MINIMUM — it prefixes everything — so the
+            two sentences contradict. Rejected the pure-lexicographic reading, which would make a
+            deliberately drafted final clause vacuous; the specific governs the general. This is
+            the sharpest divergence found: two defeats of one class citing one clause, one with
+            subcode "a" and one with none, are selected oppositely by the two readings, and the
+            selected citation is what §13.1 recourse then rests on.
+        Defeat short-circuits; only affirmation must discharge the whole space = decision:
+          id: xr3rp7
+          why: >
+            §7.3's affirmation discipline says an evaluator holding a bundle that leaves any
+            enumerated defeater-check unexamined "returns pending with that check as its typed
+            requirement, never affirmed". Rejected extending that to defeat, which is the reading
+            we prefer on structure: it would make the set of simultaneously available defeats
+            complete and canonical selection stable under bundle growth. We rejected it because
+            the span names affirmed, twice, and reading a restriction into a ruled span the span
+            does not carry is legislating — the exact thing axiom 3 forbids the fold to do.
+            Accepted consequence, and it is a defect report: under the pinned reading a defeated
+            finding's CITATION changes as the bundle grows, which contradicts the same
+            paragraph's "refines and never contradicts" and is not covered by the forbidden-edge
+            table (defeated to defeated with a different citation is unruled).
+        Requirement elements dedup on their sort key, merging species by declaration order = decision:
+          id: kdrqzc
+          why: >
+            §7.3 requires "deduplicated elements … in canonical order (subject, then kind, then
+            citing-clause bytes)". Rejected deduplicating on the whole element including species:
+            two elements could then share a sort key, the canonical order would be a preorder,
+            and the finding's bytes would be undetermined — unsatisfiable against the same
+            section's byte-identity obligation. Deduplicating on exactly the sort key makes the
+            order total, at the price of a species-merge rule the standard does not state; we
+            take the minimum in §7.2's declaration order (absent, window-open,
+            unresolved-conflict, expired/abandoned), a committed order per axiom 4. That invented
+            merge rule is itself an underdetermination the standard should close.
+        Citing-clause lists are sorted by clause identifier, not by law order = decision:
+          id: nxoq2hd
+          why: >
+            §7.3 has each element carry "the list of citing clauses" and sorts elements by
+            "citing-clause bytes", but never states the order WITHIN the list. Rejected
+            preserving the order in which the committed law enumerates the clauses: the fold's
+            three inputs include a law head, which is a self-addressing identifier and not an
+            ordered clause list, so under that reading the fold consumes an order it cannot
+            derive from its own inputs (axiom 2, axiom 4). Sorting by identifier bytes is
+            derivable from what the fold holds. Both readings are lawful and they render the same
+            element differently, so this is a byte-level fork.
+        Defeater classes compare by their stated rank, not by their names = decision:
+          id: zmwnx35s
+          why: >
+            §7.3 says to take the "lexicographic minimum" of a tuple whose first component is a
+            "defeater-class rank", and then ranks the classes crypto, authority, merit,
+            superseded — an order that is not alphabetical. Rejected comparing the class names as
+            bytes, which is what "lexicographic" literally invites and which swaps authority
+            ahead of crypto. Recorded rather than passed over because the wrong reading is the
+            one an implementer gets BY ACCIDENT if it serializes the class before comparing, and
+            the inputs that discriminate — a badly-signed act by an unauthorized party — are
+            ordinary, not exotic.
+        "First-seen" means first in committed order, never first observed = decision:
+          id: r5p4h2
+          why: >
+            §7.4's tainting current says "first-seen survives". Rejected the observational
+            reading on three independent grounds: axiom 4 bans an uncommitted order that affects
+            a finding, §12.1 says "discovery order is observer-relative and consulted by
+            nothing", and §17 requires permuted arrival orders to fold to byte-identical
+            Constitutions. The word itself is the defect — arrival vocabulary inside a wall
+            (§1.4 imports "first-seen survival" by digest referent) whose architecture forbids
+            consulting arrival. Under the rejected reading two evaluators who fetched a
+            duplicitous pair in opposite orders keep different survivors from identical bytes.
+        Identity edges are permitted; the "complete enumeration" covers 12 of 16 pairs = decision:
+          id: fxn65z
+          why: >
+            §7.3 declares itself the complete enumeration of the transition system, then rules
+            five permitted and seven forbidden edges. Four values admit sixteen ordered pairs;
+            the four identity pairs appear in neither table. Rejected "unenumerated therefore
+            forbidden": §7.3 elsewhere requires a larger bundle to refine rather than contradict,
+            which in the ordinary case means returning the same value, so that reading forbids
+            the common case and makes an engine reject its own idempotent recomputation. The
+            completeness claim is false as written, and we file it as such rather than repairing
+            it silently.
+        The transition system is a relation over recomputations, not a machine we advance = decision:
+          id: na3tebqk
+          why: >
+            §7.3 calls the finding type "a state machine" and, twelve lines later, calls a
+            finding "a function of exactly three inputs" whose repetitions are byte-identical.
+            Rejected holding per-question finding state and mutating it as evidence arrives:
+            retained state is "local state", which the same paragraph names as an input that may
+            not influence a finding. So core/ recomputes from each triple and exposes the tables
+            as a checker over ordered PAIRS of findings; a forbidden pair raises a conformance
+            error and is never silently coerced. Under the rejected reading an engine sitting at
+            affirmed refuses to compute defeated over a grown bundle; under ours it computes it
+            and reports the wall violation, and the two differ observably on one input.
+        Self-conviction always needs a bearing pair, including at the governance tier = decision:
+          id: plnfze
+          why: >
+            §7.3's pending-to-self-convicted row reads "a bearing contradictory pair, or new
+            governed-status evidence … enters the bundle". Rejected reading the disjuncts as
+            independent sufficient conditions: the resulting finding would be unconstructible,
+            because §7.1 and §7.3 both require a self-convicted finding to carry the canonical
+            proof package FOR THE CONTRADICTORY PAIR, and under that reading there is no pair. We
+            read the second disjunct as naming where the pair comes from at T3 — contradictory
+            enactments under one committed predicate, per §7.4. The rejected reading makes the
+            most destructive edge in the system reachable with no duplicity at all.
+        A question's first finding may be any of the four values = decision:
+          id: uw7kg74
+          why: >
+            §7.3 calls pending "the non-terminal bottom", which can be read as an initial state
+            every question passes through. Rejected that: a finding is a function of its triple,
+            so its value is fixed by the triple and not by a history the triple does not contain,
+            and positing an unobserved pending predecessor would make the first finding depend on
+            whether an earlier appraisal happened. Logged as convergent — no committed bytes
+            distinguish the readings — precisely so that a later reader can see it was considered
+            rather than missed.
+        Contested standing is computed beside the codomain, never inside it = decision:
+          id: b7773r
+          why: >
+            §7.4 says a lower-tier self-conviction leaves what was affirmed above "converted to
+            contested standing rather than to nothing", and contested standing is not one of the
+            four values. Rejected treating the conversion as literal: it needs either a fifth
+            codomain member, which §15's wall forbids in as many words ("the evaluator's return
+            type is the four-valued finding codomain and nothing else"), or the affirmed-to-
+            self-convicted edge, which §7.4 itself forbids by insisting breach and duplicity
+            never blur. So the affirmed finding is unchanged — it "remains a record" — and taint
+            is a non-Finding marker on the subject's standing going forward. Under the rejected
+            reading an affirmed finding's bytes change when a lower tier self-convicts.
+        Annihilation reaches pending dependents only, as a theorem = decision:
+          id: bwq5ghwn
+          why: >
+            §7.4's defeat current voids what was built on a defeated lower-tier finding, while
+            §7.3 forbids affirmed-to-defeated absolutely. Rejected the reading that the cascade
+            overrides the forbidden edge: that drives a cascade through a wall §15 names as
+            fixed, and a wall with an unstated exception is not a wall. Under the affirmation
+            discipline a dependent could only be affirmed over a bundle discharging its ENTIRE
+            requirement space, and defeating evidence is ex-ante enumerable, so an affirmed
+            dependent is one whose lower-tier check was already examined — annihilation can only
+            ever act on a pending dependent, and pending-to-defeated is permitted. core/ fails
+            closed on an affirmed dependent presented for annihilation rather than converting it.
+            Note the derivation leans on @xr3rp7: it survives defeat short-circuiting, but not an
+            edition that extends short-circuiting to affirmation.
+        Bearing at the registry and governance tiers is committed law, or we refuse = decision:
+          id: 62dtu6n
+          why: >
+            §7.3 says contradictory pairs "convict only where they bear on the question" and
+            names a decision procedure only at the key tier (the substrate's superseding-recovery
+            rules). Rejected the structural default any implementer reaches for — same subject,
+            same proposition — because that is a composition rule, and §7.5's ratified text says
+            the evaluator "SHALL refuse the invocation and SHALL NOT legislate the missing seam"
+            exactly there. So where the domain's law commits no bearing predicate at T2/T3, the
+            fold refuses. The rejected reading returns self-convicted where ours returns a
+            refusal, and §13.1 recourse hangs off which.
+        Law-relative duplicity with no committed predicate is evidence, not refusal = decision:
+          id: ided2r
+          why: >
+            §7.4 rules that a frame that never committed the violated predicate "SHALL consume
+            them as evidence, never as conviction". Rejected refusing: refusal is for a MISSING
+            rule, and here the rule is present and says "not a conviction here". Banked despite
+            being convergent because this case and @62dtu6n look identical from inside the fold —
+            both are "the law says nothing I can convict on" — and they resolve opposite ways;
+            an implementer who does not notice the seam will get one of them wrong.
 
 Python, with a pure core the substrate cannot reach into = decision:
   id: q6hqa4
