@@ -68,10 +68,26 @@ Falsify the Custos specification by building a conforming Gever = goal:
             has to reach across worktree paths that are not committed anywhere. Neither shape is
             obviously right and the choice constrains M2's layout, the purity gate, and how
             vectors are addressed.
-          # Open — no resolution. Candidates: (a) thesmo.engines.alpha/.beta behind one interface;
-          # (b) keep both as branches and run the harness across worktrees; (c) promote one to
-          # core/ and keep the other as a conformance oracle. Deferred to the M2 interview so it
-          # is decided deliberately rather than by whichever merge happens first.
+          resolution: >
+            Ruled 2026-07-29 by Daniel Hardman: keep both as long-lived branches and evolve them
+            independently through several more rounds; late in the cycle promote one branch to
+            main, and maintain the other from then on as a separate implementation. Each branch
+            gets a PR for CI and review surface, never for merge. Rejected the single-repo
+            side-by-side layout (thesmo.engines.alpha/.beta behind one interface) because a shared
+            package is a shared reading: the moment two engines import a common interface, someone
+            reconciles their type signatures and the independence that makes their disagreement
+            evidence is gone. Rejected promoting one to core/ now, because deciding early would
+            waste the rounds in which the two readings are still diverging — which is where the
+            findings come from. Accepted tradeoff: main carries no fold for most of the cycle, the
+            branches drift apart on shared tooling, and every cross-branch improvement costs the
+            maintainer a deliberate cherry-pick.
+            The binding constraint that comes with it: agents are BRANCH-blind, permanently, not
+            just Custos-blind. An agent working a branch is told nothing about any other
+            implementation and may not read main, other refs, or this repo's own issues and PRs
+            (docs/blind-brief.md, "Branch blindness"). main is specifically off-limits because it
+            holds the reconciliation record, which compares the implementations side by side — so
+            engine branches never merge or rebase from main, and shared changes cross only by the
+            maintainer's hand, who is the one party already non-blind.
     Keep the dogfooding door open, do not walk through it = decision:
       id: ylvmei
       stage-status: planned
