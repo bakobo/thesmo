@@ -11,6 +11,13 @@ short version, binding under [`this.i` @qmz2o4](this.i) (a locked constraint):
   in by digest referent.
 - **Do not read** the Custos issue tracker, `reviews/`, `tools/`, or any review, summary, or
   briefing about Custos's defects — including a one-line hint from a maintainer.
+- **Do not read anything outside the workspace you were given** — no other branch, ref, or
+  worktree, not this repo's own issues and pull requests, and not `main`. This repository carries
+  more than one independent implementation of the same specification surface, and their
+  disagreement is the product; a reading that has seen another reading is not evidence. **Never
+  merge, rebase, or cherry-pick from `main`** — it holds the reconciliation record, which compares
+  implementations side by side. If your branch needs a shared CI or tooling change, say so in your
+  report and the maintainer will bring it across.
 - **Never resolve an ambiguity by asking.** Bank it as a `this.i` node whose `why` names the
   reading you rejected and cites the lines permitting each, then pin one reading. An ambiguity
   resolved silently is the one failure this project cannot recover from.
