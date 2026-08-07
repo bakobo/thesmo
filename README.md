@@ -40,10 +40,22 @@ must name the reading they rejected. That obligation makes the intent tree do do
 is the design record *and* the running list of places the specification underdetermines an
 engine. Read it as a defect list.
 
+The long form of each reading — the quoted span with line numbers, the lawful alternatives,
+and the input on which two conforming engines produce different findings — is in
+[`docs/readings-alpha.md`](docs/readings-alpha.md).
+
 ## Status
 
-**M0 — scaffolding.** No fold yet. What exists is the intent tree, the toolchain, the
-`core/` purity gate, and the edition comparator below.
+**M1 — the evaluator walls.** `core/` implements the closed three-input type (§1.4 axiom 2),
+the four-valued finding codomain with its required payloads (§7.1, §7.3), the evidence
+ordering and canonical selection of defeats (§7.3), the complete transition system (§7.3), and
+the duplicity ladder with its two upward currents (§7.4). No substrate adapter, no CESR, no
+wire encoding: the fold's inputs are closed at three committed values, so `core/` imports no
+KERI library and a test enforces it.
+
+The first blind read of §7 found **22 places where Custos underdetermines a conforming
+engine, 16 of which make two engines diverge on identical committed bytes.** That list, not
+the code, is the milestone's output.
 
 Per [`this.i` @qmz2o4](this.i), the fold itself must be implemented by someone who has read
 the Custos specification **and nothing else** — not its issue tracker, not its reviews. See
@@ -85,6 +97,7 @@ so running it does not compromise a blind implementer.
 | `src/thesmo/core/` | The fold. Pure: imports no KERI library, enforced by test |
 | `src/thesmo/editions.py` | The 4.0 ↔ 4.1 evaluator comparator |
 | `docs/blind-brief.md` | What a `core/` implementer may and may not read |
+| `docs/readings-alpha.md` | The M1 readings in full: spans, alternatives, divergences |
 
 ## License
 
