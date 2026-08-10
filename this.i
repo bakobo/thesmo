@@ -88,6 +88,30 @@ Falsify the Custos specification by building a conforming Gever = goal:
             holds the reconciliation record, which compares the implementations side by side — so
             engine branches never merge or rebase from main, and shared changes cross only by the
             maintainer's hand, who is the one party already non-blind.
+          children:
+            The M1 legs cannot be carried forward to 4.2 = tension:
+              id: aq2sbj
+              nature: >
+                @beue6f ruled that both branches evolve independently through several more rounds,
+                with one promoted late. @pyyo5y makes that unaffordable at 4.2. m1-alpha and
+                m1-beta hold a complete reading of 4.1 §7; the successor text is renumbered,
+                repaired at eight sites, and repaired in several places BECAUSE of what these two
+                legs found. An implementer carrying a 4.1 reading into 4.2 is doing a diff read,
+                and a diff read answers "did the repair land" — a question the maintainer can
+                already answer from the bytes — instead of "does this text underdetermine an
+                engine," which is the only question that produces findings. Meanwhile the parent
+                ruling's other half still binds: deleting either branch destroys the executed
+                divergence behind Custos #27, which is the strongest artifact the project has.
+              resolution: >
+                Freeze both at their M1 state as the evidence record of the 4.1 cycle, and open new
+                legs against 4.2 rather than advancing these. The branches stay in the repository,
+                stay pushed, and stay named in the M1 reconciliation; nothing is deleted and
+                nothing is merged. @beue6f's "promote one late" survives, but the candidate for
+                promotion is drawn from the 4.2 legs, not from these. Rejected advancing them under
+                a rule forbidding the implementer to consult their own prior register, which was
+                the obvious cheap repair: it asks an implementer to unknow a reading they wrote,
+                which is not a property anyone can verify or enforce. Rejected deleting them once
+                frozen — the freeze is what makes them evidence.
     Keep the dogfooding door open, do not walk through it = decision:
       id: ylvmei
       stage-status: planned
@@ -127,6 +151,43 @@ Build blind, from committed specification bytes only = ++blind constraint:
         record builds a non-conforming engine, and cannot tell that they have. Where the two
         editions differ, that difference is itself a finding against the edition of record and
         MUST be filed rather than silently reconciled.
+      # Discharged at 4.2 — see @pyyo5y. 4.2 §1.4 stopped importing the kernel by referent, so the
+      # two-edition reading window this node imposes applies to the 4.1 cycle only. Kept, not
+      # deleted: the M1 legs read under it, and #23 came out of it.
+    The edition of record is 4.2, and the blind read is one file = decision:
+      id: pyyo5y
+      why: >
+        Custos 4.2 ratified 2026-08-07 (sha256 68cc5c9b7164b33dffcf7b705a0d1301fe108c647d35638fec
+        61d52d29b2775a, anchored at its authority KEL sn 191/192), consuming 4.1 whole. It is a
+        regeneration rather than a revision: 3,940 lines against 2,471, forty-eight accounted
+        deltas, Chapter 2 added entire, and every section renumbered — the surface M1 read as §7 is
+        §8. Two consequences bind the blind brief. First, 4.2 §1.4 says it "imports nothing by
+        pointer, because a wall carried by reference into a predecessor's bytes can be neither read
+        nor repaired in this document and drifts unowned," which discharges @ultpjo: the reading
+        window is now one file and the kernel is not in it. Second, all nine findings M1 filed are
+        closed, and #27 was closed in beta's direction using beta's own argument (4.2 §8.3: "the
+        deduplication key sees every field the element carries"), so re-running M1's questions
+        against 4.2 would confirm repairs rather than find defects. Rejected carrying 4.1 alongside
+        4.2 as a second readable file: a leg holding both reads the diff, and a diff read is a
+        reading of the repair history, which is precisely the commentary @qmz2o4 excludes.
+    One leg is not Claude = decision:
+      id: u6ykxs
+      why: >
+        M1's two legs were independent in the sense the brief demanded — neither knew the other
+        existed — and shared everything else: the same weights, the same account, the same brief,
+        the same scaffold, and the same hour (both engines written 2026-07-29 17:23–17:40). They
+        diverged anyway, so the instrument works; but the strongest form of the claim thesmo wants
+        to make ("the specification underdetermines a conforming engine") is weakened by a common
+        prior nobody measured. Custos has already measured what a second model family buys: its
+        42-2 integration round ran a two-leg collider and recorded four exhibit-grade findings from
+        the gpt-5.6 leg that the same-family leg "did not catch — the collider earning its cost,"
+        all four at the KERI/ACDC/CESR substrate boundary. So from M2 one leg per collision zone
+        runs on a different model family, dispatched through `codex exec`. Rejected running the
+        non-Claude leg as a reviewer of the Claude legs, which is what its budget most easily
+        affords: a reviewer inherits the thing it reviews, and inheritance is the contamination the
+        whole design exists to prevent. Tradeoff accepted: that leg is rate-limited, so it writes a
+        readings register and expected values rather than an engine, and its divergences are
+        executed by running the Claude engines against its cases.
     Plumbing may be coordinated; semantics may not = decision:
       id: pdig63
       why: >
@@ -190,6 +251,53 @@ Pin every underdetermination in public = decision:
         exactly the finding text we owe the specification's author. Tradeoff: the register is
         only as discoverable as this file, so M4 must project it into custos's CONTRIBUTING.md
         finding genre rather than pointing the author at a YAML tree.
+
+Construct, never review = decision:
+  id: kcmw4c
+  why: >
+    By its ratification 4.2 had been through a full gauntlet, a seed station, a targeted
+    re-gauntlet, a two-model-family collider, and a seed-reconciliation census, and its appendix of
+    record accounts every delta under a governing ruling. Review-shaped instruments have been run
+    against these bytes to exhaustion, and a further one competes with all of them for novelty.
+    What has never been run against 4.2 is construction: nobody has tried to build from it. The
+    ratifying authority's own docket for the successor edition (custos #77) names "full
+    implementability as the bar," which is the evidence only a builder produces. Driving
+    constraint: thesmo's marginal finding lives wherever the document has to survive being turned
+    into a total function, and nowhere else. So every M2 leg builds or states concrete expected
+    values, and none of them reviews. Rejected commissioning another adversarial reading round,
+    which is cheaper per finding to run and would mostly rediscover the gauntlet's returns.
+  children:
+    The collision zone is the GEL grammar and the compact receipt form = constraint:
+      id: ipjprf
+      why: >
+        Cross-leg divergence is only obtainable where legs cover the same text, so the shared
+        surface must be small enough for three legs and dense enough to fork. §18 and §19 (4.2
+        L3061–3479, ~420 lines — near-identical in size to the §7 slice M1 finished in an hour)
+        are chosen over the alternatives for three reasons. §18 is where axiom 4's membership face
+        has to cash out: "every span the fold consumes as its log is derivable from committed
+        bytes" is unsatisfiable if the grammar affords no decision procedure for GEL membership
+        from the KEL alone, and Custos's own vector ledger carries a `membership` family reading
+        "which spans are the GEL, and what happens when that is underivable" — suspected, never
+        proven. §19 is the most substrate-deep section in the document, which is where @u6ykxs's
+        non-Claude leg has a measured edge. And a form standing on three named gates is the classic
+        site at which two implementers order the gates differently and neither notices. Rejected
+        Chapter 2 for the shared zone despite it being the root the 4.3 clean-root program will be
+        rebuilt on: it is a typing chapter, its output is a classification rather than a finding,
+        and it forks on doctrine where a second model family buys least.
+    Closure audits run one leg, because their product is a table = decision:
+      id: 6rhjga
+      why: >
+        Two surfaces are worth reading at M2 whose instrument is completeness rather than
+        disagreement, and spending a second leg on either buys nothing. Chapter 2 built as a TOTAL
+        classifier — object in, three axes out — either covers the object classes §12 names or does
+        not, and a gap is a Chapter 2 defect under §1.7's own law-closure test whether one leg
+        finds it or five do. The §1.7 comprehension gate (4.2 L410) is the same shape: for every
+        construct introduced after Chapter 1, state its composition in the seven primitives or name
+        the closure that failed. Custos #37 claims the gate is satisfied in one of fifteen sections
+        and #75 says it is unrun for eleven constructs; neither is a table a stranger can check,
+        and the deliverable here is exactly that table. Rejected doubling these legs for symmetry
+        with the collision zone — a second opinion on a totality check is a second opinion on
+        arithmetic.
 
 Python, with a pure core the substrate cannot reach into = decision:
   id: q6hqa4
