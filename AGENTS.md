@@ -6,11 +6,14 @@ That signal is destroyed by *reading about* the specification instead of reading
 **Before touching `src/thesmo/core/`, read [`docs/blind-brief.md`](docs/blind-brief.md).** The
 short version, binding under [`this.i` @qmz2o4](this.i) (a locked constraint):
 
-- **Read** `spec/custos-4.1.md` **and** `spec/custos-4.0-kernel-draft.md` in the Custos
-  repository. The 4.0 kernel is required, not optional — 4.1 §1.4 binds its evaluator sections
-  in by digest referent.
-- **Do not read** the Custos issue tracker, `reviews/`, `tools/`, or any review, summary, or
-  briefing about Custos's defects — including a one-line hint from a maintainer.
+- **Read `spec/custos-4.2.md` in the Custos repository, and no other edition.** Verify
+  `sha256sum` is `68cc5c9b7164b33dffcf7b705a0d1301fe108c647d35638fec61d52d29b2775a` before you
+  start. 4.2 §1.4 imports nothing by pointer, so one file is the whole reading window — this
+  changed at 4.2, and the 4.0 kernel that the 4.1 cycle required is now **off**-limits.
+- **Do not read** the Custos issue tracker, `reviews/`, `tools/`, `vectors/`, `companions/`,
+  `lineage/`, `SUCCESSION.md`, or any review, summary, or briefing about Custos's defects —
+  including a one-line hint from a maintainer. `vectors/ledger.json` in particular is an answer
+  key written by this repo's maintainer.
 - **Do not read anything outside the workspace you were given** — no other branch, ref, or
   worktree, not this repo's own issues and pull requests, and not `main`. This repository carries
   more than one independent implementation of the same specification surface, and their

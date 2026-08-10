@@ -3,6 +3,7 @@
 **Status:** binding on anyone implementing `src/thesmo/core/`.
 **Authority:** [`this.i` @qmz2o4](../this.i), a locked constraint. Changing this document
 without first changing that node is a defect.
+**Edition of record:** Custos 4.2 ([`this.i` @pyyo5y](../this.i)).
 
 ## Why this exists
 
@@ -25,28 +26,47 @@ went into the implementer's head*, not of who signs the commits.
 
 ### You may read
 
-- `spec/custos-4.1.md` — the edition of record.
-- `spec/custos-4.0-kernel-draft.md` — **required, not optional.** 4.1 §1.4 binds the 4.0
-  kernel's evaluator sections into 4.1 by digest referent. An implementer who reads only the
-  edition of record builds a non-conforming engine and cannot tell ([`this.i` @ultpjo](../this.i)).
+- `spec/custos-4.2.md` in the Custos repository — the edition of record, and **the only
+  Custos edition you may open**. Verify it before you start:
+
+  ```sh
+  sha256sum spec/custos-4.2.md
+  # 68cc5c9b7164b33dffcf7b705a0d1301fe108c647d35638fec61d52d29b2775a
+  ```
+
+  If the digest does not match, stop and report; you are not holding ratified bytes.
 - The KERI, ACDC and CESR specifications, and keripy, as substrate references.
-- This repository: `this.i`, `docs/`, existing code and tests.
+- Your own workspace: your branch's `this.i`, its `docs/`, and its existing code and tests.
 
 ### You may not read
 
-- The Custos issue tracker, including issue #1 (the spec roadmap) and its comments.
-- `reviews/` in the Custos repository, or any adversarial review of Custos, published or not.
-- `tools/` in the Custos repository — its spec-integrity scripts encode the author's own
-  reading of the pin discipline.
-- Any conformance vectors authored by the specification's author, until the cross-run at M5.
+- **Any other edition of Custos** — not `custos-4.1.md`, not `custos-4.0-kernel-draft.md`, not
+  3.3, and not the `spec/custos-4.2-seed-*.md` files. This is a change from the 4.1 cycle, when
+  the 4.0 kernel was *required* reading because 4.1 §1.4 bound its evaluator sections in by
+  digest referent. 4.2 §1.4 ends that: it "imports nothing by pointer, because a wall carried by
+  reference into a predecessor's bytes can be neither read nor repaired in this document and
+  drifts unowned." One file is now the whole window. A predecessor edition in your head is a
+  reading of the repair history, which is commentary.
+- The Custos issue tracker, including issue #1 (the spec roadmap), the 4.3 docket (#77), and
+  their comments.
+- `reviews/` in the Custos repository — the ruling records, the supplements, and every
+  `reviews/rounds/` directory — or any adversarial review of Custos, published or not.
+- `tools/` in the Custos repository — its spec-integrity and census scripts encode the author's
+  own reading of the pin discipline.
+- **`vectors/` in the Custos repository.** `vectors/ledger.json` is a corpus of conformance
+  obligations authored by this project's maintainer, and its `expect` fields are an answer key.
+  If your brief assigns you vector work, the stimuli will be handed to you with the expected
+  values withheld.
+- `SUCCESSION.md`, `PROVENANCE.md`, the `lineage/` records, and the `companions/` directory.
+  Companion documents are teaching material about the standard, which is exactly the genre this
+  rule excludes.
 - Any summary, chat log, or briefing that characterizes Custos's defects — including a
   friendly one-line hint from a maintainer.
-- **This repository's own issues and pull requests**, and its `main` branch. Both discuss the
-  specification's defects in exactly the terms you are supposed to derive independently.
+- **This repository's own issues and pull requests**, and its `main` branch.
 - **Any branch, ref, worktree, or directory other than the workspace you were given.** Do not
   run `git branch -a`, `git log` on another ref, `git show` on another branch, or list the
   parent directory of your workspace. Your workspace root is named in your brief; everything
-  outside it, except the specification directory, is out of bounds.
+  outside it, except the single specification file above, is out of bounds.
 
 ### Branch blindness
 
@@ -66,6 +86,9 @@ rebase from `main` into your branch, and never cherry-pick from it.** If your br
 shared tooling or CI change, say so in your report and the maintainer — who is not blind — will
 bring it across deliberately.
 
+The branches `m1-alpha` and `m1-beta` are frozen at a superseded edition and are named here only
+so you can recognize and avoid them ([`this.i` @aq2sbj](../this.i)).
+
 You will notice this rule implies other work exists. That much is unavoidable: a rule cannot
 forbid reading something without alluding to it. What matters is that you learn nothing about
 *how* anyone else read the specification, which is the only thing that would contaminate your
@@ -74,6 +97,13 @@ reading.
 If you have already read one of these, **say so** rather than proceeding. You are not
 disqualified from the project; you are disqualified from `core/`. There is real work in the
 harness, the vectors, and the substrate adapter that carries no blindness requirement.
+
+### Blindness is not model-deep
+
+From M2, one leg per collision zone runs on a different model family
+([`this.i` @u6ykxs](../this.i)). Every rule in this document binds that leg identically. It is
+briefed, and reports, in the same form as any other; the only difference is that it may be asked
+for a readings register and expected values rather than an engine.
 
 ## What to do with an ambiguity
 
@@ -86,8 +116,8 @@ Instead:
 1. **Bank it as a node in `this.i`,** committed before the code that depends on it. The `why`
    must name the reading you rejected and cite the specification lines that permit each — that
    is the rebuttal-surface standard doing double duty as a defect report.
-2. **Make it a reading switch** if both readings are genuinely lawful and produce different
-   Constitutions. The point is to demonstrate the divergence, not to describe it.
+2. **Say whether the readings diverge on some input.** An entry that changes what the fold
+   returns is worth more than one that does not, and the register marks the difference.
 3. **Pin one reading** in the shipped fold, because a configurable engine does not conform
    ([`this.i` @6amuue](../this.i)).
 
@@ -105,7 +135,7 @@ The line is: **if it can change the value of a Constitution, it is blind.**
 ## Roles
 
 - **Maintainer (Daniel Hardman)** — steward and gatekeeper. He authored the adversarial
-  reviews that shaped Custos 4.1 and is permanently compromised as a `core/` reader. He
+  reviews that shaped Custos 4.1 and 4.2 and is permanently compromised as a `core/` reader. He
   approves gates, writes discriminating vectors from what he knows, and does not implement the
   fold.
 - **`core/` implementers** — blind, per this document.
