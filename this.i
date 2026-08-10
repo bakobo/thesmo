@@ -188,6 +188,44 @@ Build blind, from committed specification bytes only = ++blind constraint:
         whole design exists to prevent. Tradeoff accepted: that leg is rate-limited, so it writes a
         readings register and expected values rather than an engine, and its divergences are
         executed by running the Claude engines against its cases.
+    Legs are cut from a sanitized base, not from main = decision:
+      id: fxbwie
+      why: >
+        Blindness is a property of the workspace, not of the instructions in it. A worktree cut
+        from main hands its occupant docs/readings-alpha.md and -beta.md, docs/m1-reconciliation.md,
+        docs/research/ (which names filed Custos findings by number), tools/differential_pending.py
+        (the reproduction of the executed divergence), src/thesmo/editions.py (whose docstring
+        states a specification defect outright), and this very file — which since @pyyo5y quotes a
+        repaired clause verbatim and at @ipjprf names what a target section is suspected of. Every
+        one of those is forbidden by docs/blind-brief.md, and all of them would arrive inside the
+        window regardless, because the brief governs what a leg *seeks* and a checkout is what a
+        leg *has*. Driving constraint: at M1 blindness was enforced by construction on the
+        specification side — a directory containing only the ratified files — and the repository
+        side was never given the same treatment because main carried nothing worth hiding yet. It
+        does now. So `m2-base` carries the toolchain, the rules, the empty register template and a
+        pruned this.i, and every leg branch is cut from it. Rejected branching from the M0 scaffold
+        commit, which predates the M1 record and would have been free: it also predates the 4.2
+        brief and still carries @ultpjo, whose text states the 4.1 two-edition defect. Rejected
+        trusting the brief alone — an instruction not to read a file in the working tree is a rule
+        whose observance nobody can verify afterwards, and the one failure this project cannot
+        recover from is the contamination nobody noticed.
+      children:
+        A leg may know the rules and nothing about the document = constraint:
+          id: 5rvdq2
+          why: >
+            The pruned tree keeps the goal, the blindness constraint and its plumbing child, the
+            register discipline, the pin-one-reading rule, and the layout decision — everything a
+            leg must obey. It drops every node that names a clause, a finding, an edition's defect,
+            or another leg's surface, and the referenced-but-leaking nodes are rewritten to their
+            rule and stripped of their evidence. Driving constraint: at M1 the legs read @ultpjo,
+            which states a defect, because without it they would have built a non-conforming engine
+            against a two-edition referent — the disclosure bought conformance. At 4.2 that trade
+            is gone: §1.4 imports nothing by pointer, so there is no defect a leg must be told
+            about in order to build correctly, and the looser line has nothing left to buy.
+            Rejected keeping @3b4tjm whole for its "implement the walls, refuse above them"
+            guidance: its closing sentences name a suspected defect site, and a leg that re-derives
+            the walls posture from the document has told us something, where a leg handed it has
+            not.
     Plumbing may be coordinated; semantics may not = decision:
       id: pdig63
       why: >
