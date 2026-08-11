@@ -16,9 +16,11 @@ set of concrete cases whose expected results you state field by field.
 
 ## Your reading window
 
-The ratified Custos 4.2 edition of record has been supplied to you directly. Its digest is
-`68cc5c9b7164b33dffcf7b705a0d1301fe108c647d35638fec61d52d29b2775a`, verified before it reached
-you.
+The ratified Custos 4.2 edition of record is the file `custos-4.2.md` in your working
+directory. Its digest is `68cc5c9b7164b33dffcf7b705a0d1301fe108c647d35638fec61d52d29b2775a`,
+verified before it reached you. It is the only document about Custos on this machine — your
+environment has been reduced to it deliberately, so a search for further material is not
+merely forbidden, it is wasted budget.
 
 **Read that document and nothing else about Custos.** Specifically, do not seek out or rely on:
 any other edition of Custos (4.0, 4.1, 3.3, or any seed file); the project's issue tracker; any
