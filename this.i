@@ -226,8 +226,31 @@ Build blind, from committed specification bytes only = ++blind constraint:
             guidance: its closing sentences name a suspected defect site, and a leg that re-derives
             the walls posture from the document has told us something, where a leg handed it has
             not.
-    Plumbing may be coordinated; semantics may not = decision:
-      id: pdig63
+    M2's legs ran substrate-blind, which the brief does not require = tension:
+      id: 7eofhd
+      nature: >
+        docs/blind-brief.md permits a leg the KERI, ACDC and CESR specifications and keripy as
+        substrate references, and has since M1. The launch instructions the maintainer wrote for
+        M2 said "you may read exactly ONE file about Custos" and enumerated only the edition — a
+        guard stricter than the document it was meant to enforce. Every Claude leg honoured the
+        stricter guard, and the jail at @fxbwie makes it unconditionally true of the Codex leg,
+        which has no network path to a substrate specification at all. Leg delta reported the
+        cost on its own initiative: it could not confirm CESR's derivation code for the
+        Blake3-256 digest class, and its first invention takes the shape it does partly for that
+        reason. The error is the maintainer's, not any leg's.
+      resolution: >
+        Let it stand for M2 and record it here rather than re-running anything. The guard was
+        applied identically to all five legs, so the legs remain comparable to each other, which
+        is the property the collision zone depends on; and a leg that has read no substrate is
+        strictly more conservative about what §18 and §19 determine, so a "could not build"
+        under this guard is weaker evidence than it looks while a DIVERGENT reading is
+        unaffected. The correction that matters is to the READING of the results, not to the
+        results: where a leg reports it could not build something for want of a substrate fact,
+        that is this node's artifact and not a finding against Custos, and the reconciliation
+        must separate the two before anything is filed. Rejected re-running the legs with the
+        brief's actual window — it would spend the whole budget to relax a constraint that
+        biases against false findings. Rejected quietly widening the guard for M3 without a
+        node, which would leave two milestones incomparable for a reason nobody recorded.
       why: >
         Vector file formats, directory layouts, and harness invocation are not things the fold's
         result depends on, and agreeing them early costs nothing and saves a translation layer at
