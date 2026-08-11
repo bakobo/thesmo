@@ -251,6 +251,28 @@ Build blind, from committed specification bytes only = ++blind constraint:
         brief's actual window — it would spend the whole budget to relax a constraint that
         biases against false findings. Rejected quietly widening the guard for M3 without a
         node, which would leave two milestones incomparable for a reason nobody recorded.
+    The case format is plumbing, and M2 should have coordinated it = decision:
+      id: aatmji
+      why: >
+        @pdig63 permits coordinating anything the Constitution's value does not depend on, and
+        names vector file formats as its first example. M2's briefs went the other way: each leg
+        was told the fields inside a case's `given` and `then` were its own choice and not to
+        invent a neutral schema, on the reasoning that a shared schema would pre-empt real
+        questions — whether an answer is a finding, a refusal or a bare value is exactly the kind
+        of thing legs should disagree about. The reasoning was sound and the consequence was not:
+        at reconciliation all 46 cases were unreadable by the other leg's engine, so the
+        differential instrument M1 built could not be run at all, and the divergence that matters
+        most is still argued rather than executed. From M3 the ENVELOPE is coordinated — the case
+        file's outer keys, and a stimulus vocabulary for naming events, coordinates, seals and
+        spans — while `then` stays entirely the leg's own, because that is where the disagreement
+        lives and coordinating it would be coordinating the answer. Rejected keeping the M2 rule
+        and translating by hand: a translation is the maintainer's reading imposed on a blind
+        leg's stimulus, which is the contamination this design exists to exclude, and the one
+        translation attempted at M2 tripped a different must-reject and proved nothing. Rejected
+        coordinating the whole schema including `then`, which would hand every leg the shape of
+        the answer.
+    Plumbing may be coordinated; semantics may not = decision:
+      id: pdig63
       why: >
         Vector file formats, directory layouts, and harness invocation are not things the fold's
         result depends on, and agreeing them early costs nothing and saves a translation layer at
